@@ -1,6 +1,6 @@
-package com.xdsoft.demo.user.repository;
+package com.xdemo.demo.user.repository;
 
-import com.xdsoft.demo.user.entity.User;
+import com.xdemo.demo.user.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

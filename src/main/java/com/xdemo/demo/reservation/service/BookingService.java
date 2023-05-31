@@ -1,8 +1,8 @@
-package com.xdsoft.demo.reservation.service;
+package com.xdemo.demo.reservation.service;
 
 
-import com.xdsoft.demo.reservation.crud.ReservationCRUD;
-import com.xdsoft.demo.reservation.entity.Reservation;
+import com.xdemo.demo.reservation.crud.ReservationCRUD;
+import com.xdemo.demo.reservation.entity.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

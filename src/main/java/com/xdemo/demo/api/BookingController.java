@@ -1,8 +1,8 @@
-package com.xdsoft.demo.api;
+package com.xdemo.demo.api;
 
-import com.xdsoft.demo.reservation.entity.Reservation;
+import com.xdemo.demo.reservation.entity.Reservation;
 
-import com.xdsoft.demo.reservation.service.BookingService;
+import com.xdemo.demo.reservation.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

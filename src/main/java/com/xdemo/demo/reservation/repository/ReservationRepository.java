@@ -1,7 +1,7 @@
-package com.xdsoft.demo.reservation.repository;
+package com.xdemo.demo.reservation.repository;
 
-import com.xdsoft.demo.reservation.entity.Reservation;
-import com.xdsoft.demo.user.entity.User;
+import com.xdemo.demo.reservation.entity.Reservation;
+import com.xdemo.demo.user.entity.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
 

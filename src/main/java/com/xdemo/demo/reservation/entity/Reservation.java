@@ -1,8 +1,8 @@
-package com.xdsoft.demo.reservation.entity;
+package com.xdemo.demo.reservation.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.xdsoft.demo.user.entity.User;
+import com.xdemo.demo.user.entity.User;
 
 import javax.persistence.*;
 

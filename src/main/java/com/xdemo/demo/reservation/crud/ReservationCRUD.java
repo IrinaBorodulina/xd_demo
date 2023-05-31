@@ -1,8 +1,8 @@
-package com.xdsoft.demo.reservation.crud;
+package com.xdemo.demo.reservation.crud;
 
-import com.xdsoft.demo.reservation.entity.Reservation;
-import com.xdsoft.demo.reservation.repository.ReservationRepository;
-import com.xdsoft.demo.exc.NotFound;
+import com.xdemo.demo.reservation.entity.Reservation;
+import com.xdemo.demo.reservation.repository.ReservationRepository;
+import com.xdemo.demo.exc.NotFound;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

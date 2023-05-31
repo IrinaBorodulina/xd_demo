@@ -1,8 +1,8 @@
-package com.xdsoft.demo.user.crud;
+package com.xdemo.demo.user.crud;
 
-import com.xdsoft.demo.exc.NotFound;
-import com.xdsoft.demo.user.entity.User;
-import com.xdsoft.demo.user.repository.UserRepository;
+import com.xdemo.demo.exc.NotFound;
+import com.xdemo.demo.user.entity.User;
+import com.xdemo.demo.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

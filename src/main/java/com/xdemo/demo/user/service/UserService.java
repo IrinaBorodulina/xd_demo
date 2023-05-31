@@ -1,8 +1,8 @@
-package com.xdsoft.demo.user.service;
+package com.xdemo.demo.user.service;
 
 
-import com.xdsoft.demo.user.crud.UserCRUD;
-import com.xdsoft.demo.user.entity.User;
+import com.xdemo.demo.user.crud.UserCRUD;
+import com.xdemo.demo.user.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

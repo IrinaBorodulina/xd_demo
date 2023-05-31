@@ -1,7 +1,7 @@
-package com.xdsoft.demo.api;
+package com.xdemo.demo.api;
 
-import com.xdsoft.demo.user.entity.User;
-import com.xdsoft.demo.user.service.UserService;
+import com.xdemo.demo.user.entity.User;
+import com.xdemo.demo.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
