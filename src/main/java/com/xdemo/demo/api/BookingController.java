@@ -1,7 +1,6 @@
 package com.xdemo.demo.api;
 
 import com.xdemo.demo.reservation.entity.Reservation;
-
 import com.xdemo.demo.reservation.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +19,13 @@ public class BookingController {
     }
 
     @GetMapping("/{id}")
-    public Reservation get(@PathVariable("id") Integer id) {
+    public Reservation get(@PathVariable Integer id) {
         return bookingService.getById(id);
     }
 
     @GetMapping("/user/{userId}")
-    public List<Reservation> getAllByUserId(@PathVariable("userId") Integer userId) {
-        return bookingService.getAllByUserId(userId);
+    public List<Reservation> getAllByUserId(@PathVariable Integer userId) {
+        return bookingService.getByUserId(userId);
     }
 
     @PostMapping()

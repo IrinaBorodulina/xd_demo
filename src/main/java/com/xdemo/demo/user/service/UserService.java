@@ -1,27 +1,26 @@
 package com.xdemo.demo.user.service;
 
 
-import com.xdemo.demo.user.crud.UserCRUD;
+import com.xdemo.demo.exc.NotFound;
 import com.xdemo.demo.user.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.xdemo.demo.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
-    private final UserCRUD userCRUD;
+    private final UserRepository userRepository;
 
-    @Autowired
-    public UserService(UserCRUD userCRUD) {
-        this.userCRUD = userCRUD;
-    }
-
-    public User save(User reservation) {
-        return userCRUD.save(reservation);
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public User getById(Integer id) {
-        return userCRUD.getById(id);
+        return userRepository.findById(id).orElseThrow(NotFound::new);
+    }
+
+    public User save(User reservation) {
+        return userRepository.save(reservation);
     }
 }
 

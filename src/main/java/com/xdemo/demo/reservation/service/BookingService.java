@@ -1,8 +1,9 @@
 package com.xdemo.demo.reservation.service;
 
 
-import com.xdemo.demo.reservation.crud.ReservationCRUD;
+import com.xdemo.demo.exc.NotFound;
 import com.xdemo.demo.reservation.entity.Reservation;
+import com.xdemo.demo.reservation.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,23 +12,24 @@ import java.util.List;
 @Service
 public class BookingService {
 
-    private final ReservationCRUD reservationCRUD;
+    private final ReservationRepository reservationRepository;
 
     @Autowired
-    public BookingService(ReservationCRUD reservationCRUD) {
-        this.reservationCRUD = reservationCRUD;
-    }
-
-    public Reservation save(Reservation reservation) {
-        return reservationCRUD.save(reservation);
+    public BookingService(ReservationRepository reservationRepository) {
+        this.reservationRepository = reservationRepository;
     }
 
     public Reservation getById(Integer id) {
-        return reservationCRUD.getById(id);
+        return reservationRepository.findById(id).orElseThrow(NotFound::new);
     }
 
-    public List<Reservation> getAllByUserId(Integer userId) {
-        return reservationCRUD.getByUserId(userId);
+    public List<Reservation> getByUserId(Integer id) {
+        return reservationRepository.getByUserId(id);
     }
+
+    public Reservation save(Reservation reservation) {
+        return reservationRepository.save(reservation);
+    }
+
 }
 

@@ -1,17 +1,17 @@
-DROP TABLE IF EXISTS reservation;
-DROP TABLE IF EXISTS _user;
+DROP TABLE IF EXISTS reservations;
+DROP TABLE IF EXISTS users;
 
-CREATE TABLE _user
+CREATE TABLE users
 (
     id INT,
-    CONSTRAINT pk_user_id PRIMARY KEY (id)
+    CONSTRAINT pk_users_id PRIMARY KEY (id)
 );
-CREATE TABLE reservation
+CREATE TABLE reservations
 (
     id      INT,
     user_id INT NOT NULL,
     info    VARCHAR,
-    CONSTRAINT fk_user_id
+    CONSTRAINT fk_users_id
         FOREIGN KEY (user_id)
-            REFERENCES _user (id)
+            REFERENCES users (id)
 );

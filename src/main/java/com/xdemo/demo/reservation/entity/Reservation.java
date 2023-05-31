@@ -7,10 +7,10 @@ import com.xdemo.demo.user.entity.User;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "reservation")
+@Table(name = "reservations")
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Integer id;
     @ManyToOne(fetch = FetchType.EAGER)
