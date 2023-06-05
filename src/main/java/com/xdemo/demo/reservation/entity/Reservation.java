@@ -10,7 +10,8 @@ import javax.persistence.*;
 @Table(name = "reservations")
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rsv_seq")
+    @SequenceGenerator(name = "rsv_seq", sequenceName = "rsv_seq", allocationSize = 1)
     @Column(name = "id")
     private Integer id;
     @ManyToOne(fetch = FetchType.EAGER)

@@ -23,6 +23,11 @@ public class BookingController {
         return bookingService.getById(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        bookingService.deleteById(id);
+    }
+
     @GetMapping("/user/{userId}")
     public List<Reservation> getAllByUserId(@PathVariable Integer userId) {
         return bookingService.getByUserId(userId);

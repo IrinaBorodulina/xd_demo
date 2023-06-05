@@ -19,6 +19,10 @@ public class UserService {
         return userRepository.findById(id).orElseThrow(NotFound::new);
     }
 
+    public void deleteById(Integer id) {
+        userRepository.deleteById(id);
+    }
+
     public User save(User reservation) {
         return userRepository.save(reservation);
     }

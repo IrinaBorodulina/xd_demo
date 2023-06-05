@@ -21,6 +21,11 @@ public class UserController {
         return userService.getById(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        userService.deleteById(id);
+    }
+
     @PostMapping()
     public User add(@RequestBody User user) {
         return userService.save(user);

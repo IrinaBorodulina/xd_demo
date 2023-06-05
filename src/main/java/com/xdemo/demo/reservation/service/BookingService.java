@@ -23,6 +23,10 @@ public class BookingService {
         return reservationRepository.findById(id).orElseThrow(NotFound::new);
     }
 
+    public void deleteById(Integer id) {
+        reservationRepository.deleteById(id);
+    }
+
     public List<Reservation> getByUserId(Integer id) {
         return reservationRepository.getByUserId(id);
     }
