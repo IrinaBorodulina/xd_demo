@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: create
+      author: me
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false

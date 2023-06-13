@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-2
+      author: me
+      changes:
+        - createTable:
+            tableName: reservations
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: info
+                  type: varchar
+              - column:
+                  name: user_id
+                  type: integer
+                  constraints:
+                    foreignKeyName: fk_users
+                    nullable: false

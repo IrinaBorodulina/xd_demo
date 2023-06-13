@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-4
+      author: me
+      changes:
+        - createSequence:
+            sequenceName: rsv_seq
