@@ -7,3 +7,5 @@ databaseChangeLog:
       file: db/changelog/changeset/create-reservations-table.yaml
   - include:
       file: db/changelog/changeset/create-reservations-seq.yaml
+  - include:
+      file: db/changelog/changeset/first-migration-user.yaml

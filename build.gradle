@@ -18,6 +18,8 @@ dependencies {
 	implementation 'org.liquibase:liquibase-core:4.22.0'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
+	compileOnly 'org.projectlombok:lombok:1.18.28'
+
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

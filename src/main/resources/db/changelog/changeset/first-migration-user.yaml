@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: migration1
+      author: me
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: birth_year
+                  type: int
+                  constraints:
+                    nullable: true
