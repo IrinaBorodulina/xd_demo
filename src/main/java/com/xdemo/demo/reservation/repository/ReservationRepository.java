@@ -19,5 +19,8 @@ public interface ReservationRepository extends CrudRepository<Reservation, Integ
     List<Reservation> getByUserId(Integer userId);
 
     List<Reservation> findAllByUser(User user);
+
+    int countReservationByUserId(Integer userId);
+
 }
 

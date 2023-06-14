@@ -10,29 +10,33 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BookingService {
+public class ReservationCrudService {
 
     private final ReservationRepository reservationRepository;
 
     @Autowired
-    public BookingService(ReservationRepository reservationRepository) {
+    public ReservationCrudService(ReservationRepository reservationRepository) {
         this.reservationRepository = reservationRepository;
+    }
+
+    public Reservation save(Reservation reservation) {
+        return reservationRepository.save(reservation);
     }
 
     public Reservation getById(Integer id) {
         return reservationRepository.findById(id).orElseThrow(NotFound::new);
     }
 
-    public void deleteById(Integer id) {
-        reservationRepository.deleteById(id);
-    }
-
     public List<Reservation> getByUserId(Integer id) {
         return reservationRepository.getByUserId(id);
     }
 
-    public Reservation save(Reservation reservation) {
-        return reservationRepository.save(reservation);
+    public int countByUserId(Integer id) {
+        return reservationRepository.countReservationByUserId(id);
+    }
+
+    public void deleteById(Integer id) {
+        reservationRepository.deleteById(id);
     }
 
 }

@@ -1,6 +1,5 @@
 package com.xdemo.demo.user.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.xdemo.demo.reservation.entity.Reservation;
 import lombok.Getter;
@@ -29,14 +28,5 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Reservation> reservations = new ArrayList<>();
 
-    @JsonProperty
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
-    @JsonIgnore
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
-    }
 }
 

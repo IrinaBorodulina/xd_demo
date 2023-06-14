@@ -1,6 +1,6 @@
 package com.xdemo.demo.api;
 
-import com.xdemo.demo.user.entity.User;
+import com.xdemo.demo.user.dto.UserDto;
 import com.xdemo.demo.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +17,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User get(@PathVariable int id) {
-        return userService.getById(id);
+    public UserDto get(@PathVariable int id) {
+        return userService.getDtoById(id);
     }
 
     @DeleteMapping("/{id}")
@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @PostMapping()
-    public User add(@RequestBody User user) {
-        return userService.save(user);
+    public UserDto add(@RequestBody UserDto userDto) {
+        return userService.saveDto(userDto);
     }
 }
