@@ -1,7 +1,9 @@
 package com.xdemo.demo.api;
 
-import com.xdemo.demo.user.dto.UserDto;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.xdemo.demo.user.entity.User;
 import com.xdemo.demo.user.service.UserService;
+import com.xdemo.demo.utils.Views;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +19,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public UserDto get(@PathVariable int id) {
+    @JsonView(Views.Response.class)
+    public User get(@PathVariable int id) {
         return userService.getDtoById(id);
     }
 
@@ -27,7 +30,9 @@ public class UserController {
     }
 
     @PostMapping()
-    public UserDto add(@RequestBody UserDto userDto) {
-        return userService.saveDto(userDto);
+    @JsonView(Views.Response.class)
+    public User add(@RequestBody
+                    @JsonView(Views.Request.class) User user) {
+        return userService.saveDto(user);
     }
 }
